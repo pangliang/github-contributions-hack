@@ -6,7 +6,7 @@ if [[ `uname` == "Darwin" ]]; then
 fi
 
 start=`$COMMAND -d -30days +%Y-%m-%d`
-days=30
+days=365
 commits=5
 author=`git config user.email`
 
@@ -52,7 +52,7 @@ for d in $( seq 1 $days )
 do
 	day=`$COMMAND -d "$start +${d}days" +%Y-%m-%d`
 	rand=`echo $RANDOM`
-	rand=$(($rand%$commits+1))
+	rand=$(($rand%$commits))
 	echo "$day $rand"
 
 	for r in $( seq 1 $rand )
