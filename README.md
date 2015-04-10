@@ -1,9 +1,7 @@
 # contributions-hack
 
 自己的github首页贡献图表是不是空空如也? 想象大神一样的有密密麻麻的提交吗? 往下看
-
-![image](https://raw.githubusercontent.com/liang8305/contributions-hack/master/hack.png)
-
+![hack](https://raw.githubusercontent.com/liang8305/github-contributions-hack/master/hack.png)
 
 Just for fun !!
 
@@ -11,9 +9,11 @@ Just for fun !!
 
 1. fork这个项目
 2. clone到本地, 进入目录运行:
-	
-	./contributions-hack.sh
-	
+
+
+		./contributions-hack.sh
+
+
 3. push代码到github
 
 
