@@ -5,7 +5,7 @@ if [[ `uname` == "Darwin" ]]; then
 	COMMAND=gdate
 fi
 
-start=`$COMMAND -d -30days +%Y-%m-%d`
+
 days=365
 commits=5
 author=`git config user.email`
@@ -44,6 +44,10 @@ do
     esac
 done
 
+if [ -z "$start" ]; then
+	start=`$COMMAND -d -${days}days +%Y-%m-%d`
+fi
+
 if ! [ -d dates ]; then
 	mkdir ./dates
 fi
@@ -54,6 +58,10 @@ do
 	rand=`echo $RANDOM`
 	rand=$(($rand%$commits))
 	echo "$day $rand"
+
+	if [ $rand -eq 0 ]; then
+		continue
+	fi
 
 	for r in $( seq 1 $rand )
 	do
